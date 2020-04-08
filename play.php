@@ -35,17 +35,24 @@ class Ship
         }
     }
 }
+function printShipSummary($someShip)
+{
+    echo 'Ship Name: '.$someShip->getName();
+    echo '<hr/>';
+    $someShip->sayHello();
+    echo '<hr/>';
+    echo $someShip->getNameAndSpecs(false);
+    echo '<hr/>';
+    echo $someShip->getNameAndSpecs(true);
+}
 
 $myShip = new Ship();
 $myShip->name = 'TIE Fighter';
 
-echo 'Ship Name: '.$myShip->name;
+printShipSummary($myShip);
+$otherShip = new Ship();
+$otherShip->name = 'Imperial Shuttle';
+$otherShip->weaponPower = 5;
+$otherShip->strength = 50;
 echo '<hr/>';
-$myShip->sayHello();
-echo '<hr/>';
-echo 'Ship Name: '.$myShip->getName();
-$myShip->weaponPower = 10;
-echo '<hr/>';
-echo 'Ship Description: '.$myShip->getNameAndSpecs(false);
-echo '<hr/>';
-echo 'Ship Description: '.$myShip->getNameAndSpecs(true);
+printShipSummary($otherShip);
