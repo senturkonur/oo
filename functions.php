@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__.'/lib/Ship.php';
+require_once __DIR__.'/lib/BattleManager.php';
 function get_ships()
 {
     $ships = array();
